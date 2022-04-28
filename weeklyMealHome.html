@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weekly Meal Home</title>
+    <style>
+        header {
+            background-color: lightblue;
+        }
+    </style>
+    <script src="home.js"></script>
+</head>
+
+<body onload="initInfo()">
+    <header>
+        <nav>
+            <span>
+                <big><big><big><b>Weekly Meal</b></big></big></big>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="weeklyMealHome.html">Home</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="uploadMeal.html">Upload</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="generateMeal.html">Generate Meal</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="weeklyMealSearchPage.html">Search Meals</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="index.html">Logout</a>
+            </span>
+        </nav>
+
+    </header>
+    <main>
+        <hr />
+        <h1 id="profile_name">Weekly Meal Profile</h1>
+        <hr />
+        <script>
+            document.getElementById("profile_name").innerHTML = localStorage.getItem("currentlyLoggedIn") + "'s Profile";
+        </script>
+        <br />
+        Allergens:
+        <br/>
+        <ul id="allergens"></ul>
+        <br />
+
+        Meals:
+        <br />
+        <ul id="meals"></ul>
+        <br/>
+        Current Pantry:
+        <br/>
+        <ul id="ingredients"></ul>
+        <br />
+        <a href="weeklyMealEditProfile.html">Edit Profile</a>
+
+
+
+
+    </main>
+    <footer>
+    </footer>
+</body>
+
+
+</html>

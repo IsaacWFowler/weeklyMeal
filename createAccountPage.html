@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" and dir="Itr">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Weekly Meal Create Account</title>
+		<style>
+		header{
+			background-color: lightblue;
+		}
+		</style>
+		<script src="weeklyMealController.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<span>
+					<big><big><big><b>Weekly Meal</b></big></big></big>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "index.html">Login</a>
+				</span>
+			</nav>
+		</header>
+		<main>
+			<hr/>
+			<h2>Create Account</h2>
+			<hr/>
+			<form class="box" action="createAccountPage.html" method="POST">
+				Username:
+				<input type = "text" name="" id="username"/>
+				<br/>
+				Password:
+				<input type = "password" name="" id="password"/>
+				<br/>
+				Allergens (separate each with a comma):
+				<input type = "text" name="" id="allergens"/>
+				<br/>
+				<br/>
+				<input type = "submit" name="" value = "Create Account!" onclick="create_account()"/>
+				
+			</form>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title>Weekly Meal Upload</title>
+		<style>
+		header{
+			background-color: lightblue;
+		}
+		</style>
+		<script src="weeklyMealController.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<span>
+					<big><big><big><b>Weekly Meal</b></big></big></big>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "weeklyMealHome.html">Home</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "uploadMeal.html">Upload</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "generateMeal.html">Generate Meal</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "weeklyMealSearchPage.html">Search Meals</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "index.html">Logout</a>
+				</span>
+			</nav>
+		</header>
+		<main>
+			<hr/>
+			<h1>Meal Upload</h1>
+			<hr/>
+			<form class="box" action="uploadMeal.html" method="POST">
+				Meal Name:
+				<input type="text" id="meal_name"/>
+				<br/>
+				Meal Type:
+				<select id="MealType" name="MealType">
+					<option value = "Meat Heavy">Meat Heavy</option>
+					<option value = "Mixed">Mixed</option>
+					<option value = "Vegetarian">Vegetarian</option>
+				</select>
+				<br/>
+				Ingredients:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount
+				<br/>
+				<input type = "text" id="ingredient1_name"/>
+				<input type = "text" id="ingredient1_amt"/>
+				<br/>
+				<input type = "text" id="ingredient2_name"/>
+				<input type = "text" id="ingredient2_amt"/>
+				<br/>
+				<input type = "text" id="ingredient3_name"/>
+				<input type = "text" id="ingredient3_amt"/>
+				<br/>
+				<input type = "text" id="ingredient4_name"/>
+				<input type = "text" id="ingredient4_amt"/>
+				<br/>
+				<input type = "text" id="ingredient5_name"/>
+				<input type = "text" id="ingredient5_amt"/>
+				<br/>
+				<input type = "text" id="ingredient6_name"/>
+				<input type = "text" id="ingredient6_amt"/>
+				<br/>
+				
+				<br/>
+				<fieldset>
+					<legend>When is it appropriate to eat this meal?</legend>
+					<input type="checkbox" name="meal_type" id="breakfast_meal" value="breakfast"/>Breakfast
+					<br/>
+					<input type="checkbox" name="meal_type" id="lunch_meal" value="lunch"/>Lunch
+					<br/>
+					<input type="checkbox" name="meal_type" id="dinner_meal" value="dinner"/>Dinner
+					<br/>
+				</fieldset>
+				<fieldset>
+					<legend>What would you rate this meal out of 5?</legend>
+					<input type="radio" name="rating" id="rate_one"/>1
+					<br/>
+					<input type="radio" name="rating" id="rate_two"/>2
+					<br/>
+					<input type="radio" name="rating" id="rate_three" checked="checked"/>3
+					<br/>
+					<input type="radio" name="rating" id="rate_four"/>4
+					<br/>
+					<input type="radio" name="rating" id="rate_five"/>5
+					<br/>
+				</fieldset>
+				<input type="checkbox" name="fav" id="favorite"/>Favorite
+				<br/><br/>
+				<input type = "submit" value = "Upload" onclick="upload_meal()"/>
+			</form>
+		</main>
+	</body>
+</html>

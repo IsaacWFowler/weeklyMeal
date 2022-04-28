@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title>Weekly Meal Edit Profile</title>
+		<style>
+		header{
+			background-color: lightblue;
+		}
+		</style>
+		<script src="weeklyMealController.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<span>
+					<big><big><big><b>Weekly Meal</b></big></big></big>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "weeklyMealHome.html">Home</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "uploadMeal.html">Upload</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "generateMeal.html">Generate Meal</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "weeklyMealSearchPage.html">Search Meals</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "index.html">Logout</a>
+				</span>
+			</nav>
+		</header>
+		<main>
+			<hr/>
+			<h2>Edit Profile</h2>
+			<hr/>
+			<form class="box" action="weeklyMealHome.html" method="POST">
+				New Password:
+				<input type = "password" name="" id="password"/>
+				<br/>
+				<br/>
+				Add Allergen:
+				<input type = "text" name="" id="allergen_add"/>
+				<br/>
+				Remove Allergen:
+				<input type = "text" name="" id="allergen_remove"/>
+				<br/>
+				<br/>
+				Add Ingredient:
+				<input type = "text" name="" id="ingredient_add"/>
+				Amount:
+				<input type = "text" name="" id="ingredient_add_amount"/>
+				<br/>
+				Remove Ingredient:
+				<input type = "text" name="" id="ingredient_remove"/>
+				Amount:
+				<input type = "text" name="" id="ingredient_remove_amount"/>
+				<br/>
+				<br/>
+				<input type = "submit" value = "Confirm Changes" onclick="edit_account()"/>
+			</form>
+		</main>
+	</body>
+</html>

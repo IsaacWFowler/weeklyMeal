@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<title>Weekly Meal Generation</title>
+		<style>
+		header{
+			background-color: lightblue;
+		}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<span>
+					<big><big><big><b>Weekly Meal</b></big></big></big>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "weeklyMealHome.html">Home</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "uploadMeal.html">Upload</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "generateMeal.html">Generate Meal</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "weeklyMealSearchPage.html">Search Meals</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href = "index.html">Logout</a>
+				</span>
+			</nav>
+		</header>
+		<main>
+			<hr/>
+			<h1>Meal Generator</h1>
+			<hr/>
+			Type of Week:
+			<form>
+				<select id="MealType" name="MealType">
+					<option value = "Meat Heavy">Meat Heavy</option>
+					<option value = "Mixed">Mixed</option>
+					<option value = "Vegetarian">Vegetarian</option>
+				</select>
+				<br/>
+				<br/>
+				<input type = "submit" value = "Generate Week"/>
+			</form>
+
+		</main>
+	</body>
+</html>

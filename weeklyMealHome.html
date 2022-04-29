@@ -40,16 +40,25 @@
         <br />
         Allergens:
         <br/>
-        <ul id="allergens"></ul>
+        <p id="aller">aller</p>
+        <script>
+            document.getElementById("aller").innerHTML = localStorage.getItem("allergenList");
+        </script>
         <br />
 
         Meals:
         <br />
-        <ul id="meals"></ul>
+        <p id="mea"></p>
+        <script>
+            document.getElementById("mea").innerHTML = localStorage.getItem("userMeals");
+        </script>
         <br/>
         Current Pantry:
         <br/>
-        <ul id="ingredients"></ul>
+        <p id="i"></p>
+        <script>
+            document.getElementById("i").innerHTML = localStorage.getItem("ing");
+        </script>
         <br />
         <a href="weeklyMealEditProfile.html">Edit Profile</a>
 

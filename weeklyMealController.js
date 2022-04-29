@@ -1,12 +1,20 @@
 // JavaScript source code
 
+const userMap = new Map();
+userMap.set('testUser1', 'pass1');
+userMap.set('testUser2', 'pass2');
+const allergenMap = new Map();
+allergenMap.set('testUser1', 'peanuts');
+allergenMap.set('testUser2', 'None');
+
 function validate() {
 	var username = document.getElementById("username_in").value;
 	var password = document.getElementById("password_in").value;
 	//This test should be to access the data base and see if the password matches the one associated with the username
 	//Should also fail if username doesn't exist within the database
 	//These are simply temporary test values to make sure that it works
-	if (username == "test1" || username == "test2" && password == "test1") {
+	localStorage.setItem("userMeals", " ");
+	if (userMap.get(username) == password) {
 		localStorage.setItem("currentlyLoggedIn", username);
 		alert("Login successful");
 		window.open("weeklyMealHome.html");
@@ -21,14 +29,19 @@ function validate() {
 function create_account() {
 	var new_username = document.getElementById("username").value;
 	var new_password = document.getElementById("password").value;
-	const new_allergens = document.getElementById("allergens").value.split(",");
-	//pass these to the database
-	//if a username is already in the database this fails
-	//could display: alert("Username already exists...pick a new one");
-	//Otherwise if successful then 
-	localStorage.setItem("currentlyLoggedIn", new_username);
-	alert("Account Created!");
-	window.open("weeklyMealHome.html");
+	var new_allergens = document.getElementById("allergens").value;
+
+	if ((userMap.get(new_username) == undefined)) {
+		userMap.set(new_username, new_password);
+		allergenMap.set(new_username, new_allergens);
+		localStorage.setItem("currentlyLoggedIn", new_username);
+		localStorage.setItem("allergenList", new_allergens);
+		localStorage.setItem("userMeals", " ");
+		alert("Account Created!");
+		window.open("weeklyMealHome.html");
+	} else {
+		alert("Username not available");
+	}
 
 }
 
@@ -48,13 +61,18 @@ function edit_account() {
 	}
 	if (add_allergen && document.getElementById("allergen_add")) {
 		//upload new allergen
+		var currAll = localStorage.getItem("allergenList");
+		currAll += "," + add_allergen;
+		localStorage.setItem("allergenList", currAll);
 	}
 	if (remove_allergen && document.getElementById("allergen_remove")) {
 		//remove the allergen property from this ingredient
+		
 	}
 	if ((add_ingredient && document.getElementById("ingredient_add")) && (add_ingredient_amount && document.getElementById("ingredient_add_amount"))) {
 		//upload the ingredient amount
 		//if there already exists some of this ingredient then add this amount to it
+
 	}
 	if ((remove_ingredient && document.getElementById("ingredient_remove")) && (remove_ingredient_amount && document.getElementById("ingredient_remove_amount"))) {
 		//upload the subtracted ingredient amount
@@ -97,6 +115,9 @@ function upload_meal() {
 		if (b_meal || l_meal || d_meal) {
 			if ((ingredient1 && document.getElementById("ingredient1_name")) && (ingredient1_amt && document.getElementById("ingredient1_amt")) && (ingredient1_amt != 0)) {
 				//Upload meal name, type, times, and first ingredient
+				var cur_meals = localStorage.getItem("userMeals");
+				cur_meals += "," + new_meal_name;
+				localStorage.setItem("userMeals", cur_meals);
 				if ((ingredient2 && document.getElementById("ingredient2_name")) && (ingredient2_amt && document.getElementById("ingredient2_amt")) && (ingredient2_amt != 0)) {
 					//Upload 2nd ingredient to same meal name
 				}
